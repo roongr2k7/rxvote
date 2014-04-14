@@ -3,7 +3,7 @@ package rxvote
 import "testing"
 import "time"
 import "math/rand"
-import "fmt"
+//import "fmt"
 
 type MockRand rand.Rand
 func (m MockRand) Intn(n int) int {
@@ -34,8 +34,9 @@ func TestVote(t *testing.T) {
   timeout := time.After(4 * time.Second)
   ch <- Vote()
   select {
-    case ret := <-ch:
-      fmt.Println(ret)
+//    case ret := <-ch:
+//      fmt.Println(ret)
+    case <-ch:
     case <-timeout:
       t.Errorf("ERROR: Timeout")
   }
