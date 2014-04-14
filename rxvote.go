@@ -1,5 +1,6 @@
 package rxvote
 
+import "fmt"
 import "time"
 import "math/rand"
 
@@ -49,6 +50,7 @@ func Vote() (votes []bool) {
     go vote(ch)
   }
   votes = []bool{<-channels[0], <-channels[1], <-channels[2]}
+  fmt.Println(votes)
   return
 }
 
