@@ -5,12 +5,6 @@ import "time"
 import "math/rand"
 //import "fmt"
 
-type MockRand rand.Rand
-func (m MockRand) Intn(n int) int {
-  return 3
-}
-func (m MockRand) Seed(n int64) {}
-
 func TestGetVoteResult(t *testing.T) {
   tests := []struct{
     input []bool
