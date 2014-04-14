@@ -17,6 +17,9 @@ func TestGetVoteResult(t *testing.T) {
     expected bool
   }{
     {[]bool{true, true, true}, true},
+    {[]bool{true, true, false}, true},
+    {[]bool{true, false, false}, false},
+    {[]bool{false, false, false}, false},
   }
 
   for _, test := range tests {
