@@ -34,7 +34,7 @@ func Vote() (votes []bool) {
   ch := make(chan bool)
   for i := 0; i < 3; i++ {
     go func() {
-      time.Sleep(time.Duration(rand.Intn(4)) * time.Second)
+      time.Sleep(time.Duration(1 + rand.Intn(3)) * time.Second)
       ch <- (rand.Intn(2) == 1)
     }()
   }
