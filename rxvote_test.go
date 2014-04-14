@@ -2,7 +2,6 @@ package rxvote
 
 import "testing"
 import "time"
-import "math/rand"
 //import "fmt"
 
 func TestGetVoteResult(t *testing.T) {
