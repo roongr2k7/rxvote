@@ -3,11 +3,6 @@ package rxvote
 import "time"
 import "math/rand"
 
-type Randomizer interface {
-  Seed(n int64)
-  Intn(n int) int
-}
-
 func GetVoteResult(votes []bool) bool {
   trueCounter, falseCounter := 0, 0
 
