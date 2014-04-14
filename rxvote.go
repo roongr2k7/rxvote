@@ -45,8 +45,8 @@ func Vote() (votes []bool) {
   // concurrency 2
   channels := [](chan bool){make(chan bool), make(chan bool), make(chan bool)}
 
-  for i := 0; i < 3; i++ {
-    go vote(channels[i])
+  for _, ch := range channels {
+    go vote(ch)
   }
   votes = []bool{<-channels[0], <-channels[1], <-channels[2]}
   return
